@@ -2,6 +2,10 @@
 
 An example [Botpress](https://github.com/botpress/botpress) application integrated with [Dialog Analytics](https://dialoganalytics.com/).
 
+It uses the following Botpress modules:
+- [dialog](https://github.com/dialoganalytics/botpress-dialog)
+- [messenger](https://github.com/botpress/botpress-messenger)
+
 ## Installation
 
 Clone this repository and install dependencies:
@@ -22,7 +26,7 @@ To track messages with Dialog, you need an API token which is available in your 
 
 ### Messenger
 
-This example application uses the Facebook Messenger messaging platform. Follow these [instructions](https://github.com/botpress/botpress-messenger) to configure the messenger module.
+This example application uses the Facebook Messenger messaging platform. Follow these [instructions](https://github.com/botpress/botpress-messenger#get-started) to configure the messenger module.
 
 
 ## Usage
