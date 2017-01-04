@@ -3,8 +3,8 @@
 An example [Botpress](https://github.com/botpress/botpress) application integrated with [Dialog Analytics](https://dialoganalytics.com/).
 
 It uses the following Botpress modules:
-- [dialog](https://github.com/dialoganalytics/botpress-dialog)
-- [messenger](https://github.com/botpress/botpress-messenger)
+- [botpress-dialog](https://github.com/dialoganalytics/botpress-dialog)
+- [botpress-messenger](https://github.com/botpress/botpress-messenger)
 
 ## Installation
 
