@@ -9,6 +9,116 @@ module.exports = function(bp) {
     bp.messenger.sendAttachment(event.user.id, 'image', 'https://dialoganalytics.com/images/og-image.png')
   })
 
+  bp.hear({ text: /quick reply/i, type: 'message' }, (event, next) => {
+    payload = {
+      quick_replies: [
+        {
+          content_type: 'text',
+          title: 'Amazon Alexa',
+          payload: 'ALEXA'
+        },
+        {
+          content_type: 'text',
+          title: 'Google Actions',
+          payload: 'GOOGLE'
+        },
+        {
+          content_type: 'text',
+          title: 'DingDong',
+          payload: 'DINGDONG'
+        }
+      ],
+      typing: true
+    }
+
+    bp.messenger.sendText(event.user.id, 'Which one do you own?', payload)
+  })
+
+  bp.hear({ text: /url button/i, type: 'message' }, (event, next) => {
+    payload = {
+      template_type: "button",
+      text: "Check out our documentation!",
+      buttons: [
+        {
+          type: "web_url",
+          url: "https://docs.dialoganalytics.com",
+          title: "URL button"
+        }
+      ]
+    }
+
+    bp.messenger.sendTemplate(event.user.id, payload, { typing: 2000 })
+  })
+
+  bp.hear({ text: /postback button/i, type: 'message' }, (event, next) => {
+    payload = {
+      template_type: "button",
+      text: "Do this!",
+      buttons: [
+        {
+          type: "postback",
+          title: "Postback button",
+          payload: "DEVELOPER_DEFINED_PAYLOAD"
+        }
+      ]
+    }
+
+    bp.messenger.sendTemplate(event.user.id, payload, { typing: 2000 })
+  })
+
+  bp.hear({ text: /call button/i, type: 'message' }, (event, next) => {
+    payload = {
+      template_type: "button",
+      text: "Reach out to the Dialog team",
+      buttons: [
+        {
+          "type":"phone_number",
+          "title":"Call us",
+          "payload":"+15105551234"
+       }
+      ]
+    }
+
+    bp.messenger.sendTemplate(event.user.id, payload, { typing: 2000 })
+  })
+
+  bp.hear({ text: /share button/i, type: 'message' }, (event, next) => {
+    payload = {
+      template_type: "generic",
+      elements:[
+        {
+          title: "Dialog",
+          subtitle: "Conversational analytics",
+          default_action: {
+            type: "web_url",
+            url: "https://dialoganalytics.com"
+          },
+          buttons:[
+            {
+              type: "element_share"
+            }
+          ]
+        }
+      ]
+    }
+
+    bp.messenger.sendTemplate(event.user.id, payload, { typing: 2000 })
+  })
+
+  bp.hear({ text: /location/i, type: 'message' }, (event, next) => {
+    payload = {
+      quick_replies: [
+        {
+          title: 'location',
+          content_type: 'location'
+        }
+      ],
+      typing: true
+    }
+
+    bp.messenger.sendText(event.user.id, 'Where do you live?', payload)
+  })
+
   bp.hear({ text: /button template/i, type: 'message' }, (event, next) => {
     payload = {
       template_type: "button",
@@ -17,8 +127,18 @@ module.exports = function(bp) {
         {
           type: "web_url",
           url: "https://docs.dialoganalytics.com",
-          title: "Documentation"
-        }
+          title: "URL button"
+        },
+        {
+          type: "postback",
+          title: "Postback button",
+          payload: "DEVELOPER_DEFINED_PAYLOAD"
+        },
+        {
+          "type":"phone_number",
+          "title":"Call me maybe",
+          "payload":"+15105551234"
+       }
       ]
     }
 
