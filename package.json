@@ -1,11 +1,11 @@
 {
   "name": "botpress-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example botpress application with the botpress-dialog module",
   "main": "index.js",
   "dependencies": {
     "botpress": "0.x",
-    "botpress-dialog": "^1.0.0",
+    "botpress-dialog": "^1.0.8",
     "botpress-messenger": "^1.0.14"
   },
   "scripts": {
