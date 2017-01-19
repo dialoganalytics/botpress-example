@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "botpress": "0.x",
-    "botpress-dialog": "^1.0.9",
+    "botpress-dialog": "^1.0",
     "botpress-messenger": "^1.0.14"
   },
   "scripts": {
