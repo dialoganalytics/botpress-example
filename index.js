@@ -41,7 +41,7 @@ module.exports = function(bp) {
       buttons: [
         {
           type: "web_url",
-          url: "https://docs.dialoganalytics.com",
+          url: bp.dialog.link("https://docs.dialoganalytics.com", event.user.id),
           title: "URL button"
         }
       ]
@@ -91,7 +91,7 @@ module.exports = function(bp) {
           subtitle: "Conversational analytics",
           default_action: {
             type: "web_url",
-            url: "https://dialoganalytics.com"
+            url: bp.dialog.link("https://dialoganalytics.com", event.user.id)
           },
           buttons:[
             {
@@ -126,7 +126,7 @@ module.exports = function(bp) {
       buttons: [
         {
           type: "web_url",
-          url: "https://docs.dialoganalytics.com",
+          url: bp.dialog.link("https://docs.dialoganalytics.com", event.user.id),
           title: "URL button"
         },
         {
@@ -139,7 +139,7 @@ module.exports = function(bp) {
           "title":"Call me maybe",
           "payload":"+15105551234"
        }
-      ]
+     ]
     }
 
     bp.messenger.sendTemplate(event.user.id, payload, { typing: 2000 })
@@ -155,17 +155,17 @@ module.exports = function(bp) {
           subtitle: "Conversational analytics",
           default_action: {
             type: "web_url",
-            url: "https://dialoganalytics.com"
+            url: bp.dialog.link("https://dialoganalytics.com", event.user.id)
           },
           buttons:[
             {
               type: "web_url",
-              url: "https://docs.dialoganalytics.com",
+              url: bp.dialog.link("https://docs.dialoganalytics.com", event.user.id),
               title: "Documentation"
             },
             {
               type: "web_url",
-              url: "https://github.com/dialoganalytics",
+              url: bp.dialog.link("https://github.com/dialoganalytics", event.user.id),
               title: "Dialog on Github"
             }
           ]
@@ -188,7 +188,7 @@ module.exports = function(bp) {
             {
               title: "Learn more",
               type: "web_url",
-              url: "https://dialoganalytics.com/messenger"
+              url: bp.dialog.link("https://dialoganalytics.com/messenger", event.user.id)
             }
           ]
         },
@@ -200,7 +200,7 @@ module.exports = function(bp) {
             {
               title: "Learn more",
               type: "web_url",
-              url: "https://dialoganalytics.com/smooch"
+              url: bp.dialog.link("https://dialoganalytics.com/smooch", event.user.id)
             }
           ]
         }
@@ -208,7 +208,7 @@ module.exports = function(bp) {
       buttons: [
         {
           type: "web_url",
-          url: "https://dialoganalytics.com",
+          url: bp.dialog.link("https://dialoganalytics.com", event.user.id),
           title: "Learn More"
         }
       ]
